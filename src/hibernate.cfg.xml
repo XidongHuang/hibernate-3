@@ -37,11 +37,13 @@
 			<mapping resource="com/tony/hibernate/one2one/primary/Department.hbm.xml"/> 
 		<mapping resource="com/tony/hibernate/n2n/Category.hbm.xml" />
 		<mapping resource="com/tony/hibernate/n2n/Item.hbm.xml" />
-		<mapping resource="com/tony/hibernate/subclass/Person.hbm.xml" />
 			
-			-->
-
+		<mapping resource="com/tony/hibernate/subclass/Person.hbm.xml" />
 		<mapping resource="com/tony/hibernate/joined/subclass/Person.hbm.xml" />
+		<mapping resource="com/tony/hibernate/union/subclass/Person.hbm.xml" />
+			-->
+	<mapping resource="com/tony/hibernate/strategy/Customer.hbm.xml"/>
+	<mapping resource="com/tony/hibernate/strategy/Order.hbm.xml"/>
 
 	</session-factory>
 </hibernate-configuration>

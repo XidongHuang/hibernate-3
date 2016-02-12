@@ -1,4 +1,4 @@
-package com.tony.hibernate.joined.subclass;
+package com.tony.hibernate.union.subclass;
 
 import java.util.List;
 
