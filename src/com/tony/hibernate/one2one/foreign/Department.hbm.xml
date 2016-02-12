@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-Feb-2016 3:36:29 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.tony.hibernate.one2one.foreign">
+    <class name="Department" table="DEPARTMENTS">
+        <id name="deptId" type="java.lang.Integer">
+            <column name="DEPT_ID" />
+            <generator class="native" />
+        </id>
+        <property name="deptName" type="java.lang.String">
+            <column name="DEPT_NAME" />
+        </property>
+	
+		<!-- Use many-to-one to mapping 1-1 instance relation -->
+		
+		<many-to-one name="mgr" class="Manager" column="MGR_ID" unique="true"></many-to-one>
+
+    </class>
+</hibernate-mapping>

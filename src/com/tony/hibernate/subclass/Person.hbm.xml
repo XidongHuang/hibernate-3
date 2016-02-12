@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-Feb-2016 6:46:12 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.tony.hibernate.subclass">
+    <class name="Person" table="PERSONS" discriminator-value="PERSON">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        
+        <!-- Configure distinguish column  -->
+        <discriminator column="TYPE" type="string"></discriminator>
+        
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="age" type="int">
+            <column name="AGE" />
+        </property>
+        
+        <!-- Mapping subclass Student -->
+        <subclass name="Student" discriminator-value="STUDENT">
+        	<property name="school" type="string" column="SCHOOL"></property>
+        
+        </subclass>
+        
+    </class>
+</hibernate-mapping>

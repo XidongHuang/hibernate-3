@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-Feb-2016 3:36:29 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="com.tony.hibernate.one2one.primary.Manager" table="MANAGERS">
+		<id name="mgrId" type="java.lang.Integer">
+			<column name="MGR_ID" />
+			<generator class="native" />
+		</id>
+		<property name="mgrName" type="java.lang.String">
+			<column name="MGR_NAME" />
+		</property>
+
+		<!-- Mapping 1-1 instance relation: There is a foreign key in in corresponding 
+			table, the current persistent class uses one-to-one for mapping -->
+		<!-- 
+			The side without foreign needs to use "one-to-one", 
+			this element's "property-ref" attribute can specific the binding 
+			table's other title name (database attributes) as relating key, not
+			just primary key
+			
+		 -->
+		<one-to-one name="dept"
+			class="com.tony.hibernate.one2one.primary.Department"></one-to-one>
+
+	</class>
+</hibernate-mapping>
